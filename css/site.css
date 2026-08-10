@@ -140,10 +140,12 @@ a:hover { color: var(--brand); }
   text-transform: uppercase; color: var(--muted); margin-right: 8px;
 }
 .chip {
+  display: inline-flex; align-items: center; gap: 7px;
   font-size: 0.85rem; font-weight: 550; color: var(--body);
   background: var(--bg); border: 1px solid var(--line);
   border-radius: 999px; padding: 5px 13px;
 }
+.chip svg { width: 15px; height: 15px; flex: none; }
 
 /* ---- sections ---- */
 
