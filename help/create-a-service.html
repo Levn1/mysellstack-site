@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Create your first service · MySellStack Appointments help</title>
-  <meta name="description" content="How to create a bookable service: pricing, duration, staff, availability, custom questions, and the live storefront preview.">
+  <meta name="description" content="A five-step walkthrough: pick a booking style, name and price the service, choose how customers pay, assign staff, and verify Book now on your storefront.">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f7e54'/%3E%3Crect x='14' y='16' width='36' height='34' rx='6' fill='white'/%3E%3Cpath d='M14 22a6 6 0 0 1 6-6h24a6 6 0 0 1 6 6v6H14z' fill='%23dcece4'/%3E%3Crect x='22' y='11' width='4' height='9' rx='2' fill='white'/%3E%3Crect x='38' y='11' width='4' height='9' rx='2' fill='white'/%3E%3Ccircle cx='36.5' cy='42.5' r='7.5' fill='%230f7e54'/%3E%3Cpath d='M32.8 42.6l2.6 2.6 4.6-5' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,64 +31,118 @@
   <div class="crumbs"><a href="index.html">Help center</a> ▸ Getting started</div>
   <h1>Create your first service</h1>
   <p class="intro">A service is the thing customers book: a haircut, a class,
-  a consultation. Creating one automatically creates a matching product in
-  your store, so it can be sold like anything else you sell.</p>
+  a consultation. Five steps, about two minutes. You never touch the Shopify
+  product admin: the matching product is created and published for you.</p>
 
-  <h2>Start a new service</h2>
-  <p>Go to <strong>Services</strong> in the app’s sidebar and click
+  <h2>1. Open the service builder</h2>
+  <p>In the app, go to <strong>Services</strong> and click
   <strong>New service</strong>.</p>
   <figure class="shot">
     <img src="../assets/help-add-service.png" alt="The Services page with the New service button highlighted" loading="lazy">
   </figure>
 
-  <h2>The choices that matter</h2>
+  <h2>2. Pick the booking style</h2>
+  <p>The builder asks what kind of service this is. Pick the closest fit; it
+  sets sensible defaults, everything stays adjustable, and a
+  <strong>Change type</strong> button lets you switch later.</p>
+  <figure class="shot">
+    <img src="../assets/article-type-chooser.png" alt="The service type chooser with 1-on-1 Appointment, Group class, and Scheduled event cards" loading="lazy">
+  </figure>
   <ul>
-    <li><strong>Price</strong>: a paid service goes through your Shopify
-        checkout like a normal order. You can also make a service
-        <em>free</em> or <em>pay on arrival</em>; those book instantly without
-        payment, and the widget tells the customer what to expect.</li>
-    <li><strong>Location</strong>: <em>In real life</em>, or <em>Virtual</em>.
-        Virtual services can generate a Google Meet or Microsoft Teams link
-        with every booking (or use a fixed link you provide). See
-        <a href="connect-calendars.html">calendar sync</a>.</li>
-    <li><strong>Format</strong>: <em>Solo</em> (one customer per slot) or
-        <em>Group</em> with a capacity, for classes and workshops. Group slots
-        show how many places are left.</li>
-    <li><strong>Staff</strong>: who performs it. Let customers pick a person,
-        or have the app assign someone available automatically.</li>
-    <li><strong>Availability</strong>: <em>Open hours</em> offers slots from
-        your staff’s working hours; <em>Events</em> runs at fixed times you
-        define (Tuesdays at 6pm, one-off dates, and so on).</li>
-    <li><strong>Custom questions</strong>: anything you need to know up
-        front. Answers arrive with the booking and in your emails.</li>
+    <li><strong>1-on-1 Appointment</strong>: one customer per slot.
+        Consultations, lessons, treatments.</li>
+    <li><strong>Group class</strong>: many people share a recurring slot, with
+        a capacity. Yoga, fitness, workshops. Slots show how many places are
+        left.</li>
+    <li><strong>Scheduled event</strong>: sessions on set dates, one-off or a
+        series. Workshops, classes, pop-ups.</li>
   </ul>
 
-  <h2>Watch the live preview</h2>
-  <p>While you edit, the right-hand pane shows the actual storefront widget for
-  this service, updating as you type. Use the step bar at its top to walk the
-  whole booking flow (times, details form, review) before anything is
-  published.</p>
+  <h2>3. Name it and price it</h2>
+  <p>In <strong>Identity</strong>, give the service its name and a short
+  description; both appear in the booking widget. In
+  <strong>Pricing and duration</strong>, pick how long a session runs and what
+  it costs. <em>Fixed length</em> is one duration and one price;
+  <em>Multi choice</em> lets customers pick a length (30, 60, or 90 minutes,
+  say) with a price per option.</p>
   <figure class="shot">
-    <img src="../assets/home-editor.png" alt="The service editor with the live storefront widget preview on the right" loading="lazy">
-    <figcaption>Everything the customer will see, live while you edit.</figcaption>
+    <img src="../assets/article-pricing.png" alt="The Pricing and duration section with length mode, duration chips, and the price field" loading="lazy">
   </figure>
+  <p>Also on this page: <strong>Location</strong>. In real life, or Virtual
+  with a video link (Google Meet or Microsoft Teams) sent automatically with
+  every confirmation.</p>
 
-  <div class="note"><strong>Where’s the product?</strong> Saving a service
-  creates and publishes its product automatically, and keeps it in sync when
-  you rename or reprice the service. You don’t need to touch the product in
-  Shopify admin.</div>
+  <h2>4. Decide how customers pay</h2>
+  <p>The <strong>Checkout flow</strong> section has three options:</p>
+  <figure class="shot">
+    <img src="../assets/article-checkout-modes.png" alt="The Checkout flow options: Standard checkout, Free, and Pay on arrival" loading="lazy">
+  </figure>
+  <ul>
+    <li><strong>Standard checkout</strong>: the customer pays through your
+        Shopify checkout, and the booking arrives as a normal order. Taxes,
+        discounts, and refunds work the way they already do.</li>
+    <li><strong>Free</strong>: no charge, no checkout. The booking confirms
+        instantly.</li>
+    <li><strong>Pay on arrival</strong>: reserve now, pay at the venue. The
+        widget and emails say so clearly.</li>
+  </ul>
 
-  <h2>Next: put it on your storefront</h2>
-  <p>With a service saved, <a href="add-widget-to-theme.html">turn the booking
-  widget on in your theme</a>. Its product page then sells appointments
-  instead of inventory.</p>
+  <h2>5. Assign who does it, then create</h2>
+  <p>Tick the staff members who perform this service. Let customers pick a
+  person, or have the app assign whoever is available. Then click
+  <strong>Create service</strong>.</p>
+  <div class="note"><strong>First time in the app?</strong> If you haven't
+  added anyone under <strong>Staff</strong> yet, the form asks you to do that
+  first. It takes a minute: <strong>Staff → Add staff</strong>, type a name,
+  then open their <strong>Schedule</strong> tab and set weekly hours. The
+  <strong>Templates</strong> menu fills a whole week in one click.</div>
+  <figure class="shot">
+    <img src="../assets/article-staff-templates.png" alt="A staff member's weekly hours grid with the Templates menu open, offering presets like Mon to Fri, 9 AM to 5 PM" loading="lazy">
+    <figcaption>Availability comes from staff hours. One template click beats
+    painting the grid by hand.</figcaption>
+  </figure>
+  <div class="note"><strong>Where's the product?</strong> Creating the service
+  creates and publishes its Shopify product automatically, and keeps it in
+  sync when you rename or reprice. There is nothing to set up on the Products
+  page, ever.</div>
+
+  <h2>Verify it worked</h2>
+  <p>Open the service's product page on your storefront. The theme's
+  “Add to cart” is replaced by <strong>Book now</strong>, and clicking it
+  opens the booking widget with your real availability.</p>
+  <figure class="shot">
+    <img src="../assets/help-book-now-button.png" alt="A storefront product page where the add-to-cart button has been replaced by a theme-styled Book now button" loading="lazy">
+  </figure>
+  <div class="warn"><strong>No Book now button?</strong> It's nearly always
+  the theme embed or an unsaved theme. Run the
+  <a href="widget-not-showing.html">two-minute checklist</a>, and if it still
+  hides, <a href="index.html#contact">message us</a> with the product link.</div>
+
+  <h2>Quick answers</h2>
+  <p><strong>Do I need to create a Shopify product first?</strong> No. The
+  app creates and publishes it when you create the service, and keeps it in
+  sync afterwards.</p>
+  <p><strong>Where do I set availability?</strong> Slots come from the
+  assigned staff's weekly hours (Staff → Schedule), optionally narrowed by the
+  service's own booking window. Group classes and events run at the fixed
+  times you define instead.</p>
+  <p><strong>Can a service be free?</strong> Yes. Pick <em>Free</em> in the
+  Checkout flow section and bookings confirm instantly with no payment step.
+  <em>Pay on arrival</em> reserves the slot and collects nothing online.</p>
+  <p><strong>Where does the service appear on my storefront?</strong> On its
+  own product page, anywhere you link that page, and in any
+  <a href="add-widget-to-theme.html">Booking Calendar or Services Directory
+  block</a> you've placed.</p>
+  <p><strong>Made a mistake?</strong> Everything is editable after creation,
+  and the editor shows a live preview of the storefront widget while you
+  change things.</p>
 
   <div class="related">
     <h2>Related guides</h2>
     <ul>
       <li><a href="add-widget-to-theme.html">Add the booking widget to your theme</a></li>
       <li><a href="availability.html">Working hours, breaks &amp; holidays</a></li>
-      <li><a href="emails.html">Booking emails &amp; reminders</a></li>
+      <li><a href="widget-not-showing.html">The widget isn't showing on my store</a></li>
     </ul>
   </div>
 </article>
