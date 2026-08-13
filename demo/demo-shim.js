@@ -47,7 +47,7 @@
   // capture window's first UTC midnight (baseMs); the position of any
   // real date inside the repeating cycle keeps weekdays aligned because
   // cycleDays is a multiple of 7.
-  function expandSlots(pid, fromISO, toISO) {
+  function expandSlots(pid, fromISO, toISO, staffId) {
     var p = DATA.products[pid];
     var from = new Date(fromISO).getTime();
     var to = new Date(toISO).getTime();
@@ -77,6 +77,7 @@
           });
         } else {
           var member = staff[t[3]] || staff[0];
+          if (staffId && (!member || member.id !== staffId)) continue;
           out.push({
             startsAt: new Date(startsAt).toISOString(),
             endsAt: new Date(endsAt).toISOString(),
@@ -105,6 +106,10 @@
       // /book (which we fake) instead of adding to a Shopify cart that
       // does not exist here.
       cfg.service.noCheckoutMode = "pay_on_arrival";
+      // Show more of the product in the demo: the solo service gets the
+      // customer-facing staff picker, and both carry a service image.
+      if (p.kind === "open") cfg.service.staffSelection = "customer_picks";
+      if (p.image) cfg.service.imageUrl = p.image;
       return jsonResponse(cfg);
     }
     if (path === "/availability") {
@@ -112,7 +117,12 @@
       var owner = serviceToProduct[sid];
       if (!owner) return jsonResponse({ slots: [] });
       return jsonResponse({
-        slots: expandSlots(owner, u.searchParams.get("from"), u.searchParams.get("to")),
+        slots: expandSlots(
+          owner,
+          u.searchParams.get("from"),
+          u.searchParams.get("to"),
+          u.searchParams.get("staff_id"),
+        ),
       });
     }
     if (path === "/holds") {
