@@ -15,6 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;700;800&display=swap">
+  <script>document.documentElement.classList.add("js");</script>
   <link rel="stylesheet" href="css/site.css">
   <link rel="stylesheet" href="demo/widget.css">
 </head>
@@ -68,30 +69,32 @@
 
       <div class="demo-controls reveal">
         <div class="demo-tabs" role="group" aria-label="Demo service">
-          <button type="button" class="demo-tab is-active" data-demo-product="15000934023279">
+          <button type="button" class="demo-tab is-active" aria-pressed="true" data-demo-product="15000934023279">
             1-on-1 · Massage
           </button>
-          <button type="button" class="demo-tab" data-demo-product="14988618661999">
+          <button type="button" class="demo-tab" aria-pressed="false" data-demo-product="14988618661999">
             Group class · Yoga
           </button>
         </div>
         <div class="demo-themes" role="group" aria-label="Widget theme">
-          <button type="button" class="theme-pill is-active" data-demo-theme="aurora">
+          <button type="button" class="theme-pill is-active" aria-pressed="true" data-demo-theme="aurora">
             <span class="swatch" style="background:#355C55"></span>Aurora
           </button>
-          <button type="button" class="theme-pill" data-demo-theme="noir">
+          <button type="button" class="theme-pill" aria-pressed="false" data-demo-theme="noir">
             <span class="swatch" style="background:#16181d"></span>Noir
           </button>
-          <button type="button" class="theme-pill" data-demo-theme="ocean">
+          <button type="button" class="theme-pill" aria-pressed="false" data-demo-theme="ocean">
             <span class="swatch" style="background:#243447"></span>Ocean
           </button>
-          <button type="button" class="theme-pill" data-demo-theme="blush">
+          <button type="button" class="theme-pill" aria-pressed="false" data-demo-theme="blush">
             <span class="swatch" style="background:#7A4A3B"></span>Blush
           </button>
         </div>
       </div>
 
       <div class="demo-stage reveal" id="demo-stage">
+        <noscript><p class="demo-note" style="padding:40px 20px">The live demo
+           needs JavaScript. Everything else on this page works without it.</p></noscript>
         <div id="demo-widget-holder" aria-live="polite">
           <div
             data-booking-widget-inline
@@ -387,7 +390,10 @@
   var STATE = window.__BW_DEMO_STATE__;
   var DATA = window.__BW_DEMO_DATA__;
   function activate(group, btn) {
-    group.forEach(function (b) { b.classList.toggle("is-active", b === btn); });
+    group.forEach(function (b) {
+      b.classList.toggle("is-active", b === btn);
+      b.setAttribute("aria-pressed", b === btn ? "true" : "false");
+    });
   }
   var themeBtns = Array.prototype.slice.call(document.querySelectorAll("[data-demo-theme]"));
   themeBtns.forEach(function (btn) {
