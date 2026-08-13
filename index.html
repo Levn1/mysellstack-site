@@ -4,54 +4,106 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MySellStack Appointments · Appointment booking for Shopify</title>
-  <meta name="description" content="Take appointment bookings right on your Shopify storefront. Services, staff, calendar sync, and reminder emails, paid through your own checkout.">
+  <meta name="description" content="Take appointment bookings right on your Shopify storefront. Try the live booking widget, switch themes, and see how services, staff, and reminders work together.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="MySellStack Appointments · Appointment booking for Shopify">
-  <meta property="og:description" content="Sell services the way you sell products. Customers pick a time and pay in your own checkout.">
+  <meta property="og:description" content="Turn any product into a bookable service. Try the real booking widget live, right on the homepage.">
   <meta property="og:url" content="https://mysellstack.com/">
-  <meta property="og:image" content="https://mysellstack.com/assets/store-widget.png">
+  <meta property="og:image" content="https://mysellstack.com/assets/home-hero-scene.webp">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f7e54'/%3E%3Crect x='14' y='16' width='36' height='34' rx='6' fill='white'/%3E%3Cpath d='M14 22a6 6 0 0 1 6-6h24a6 6 0 0 1 6 6v6H14z' fill='%23dcece4'/%3E%3Crect x='22' y='11' width='4' height='9' rx='2' fill='white'/%3E%3Crect x='38' y='11' width='4' height='9' rx='2' fill='white'/%3E%3Ccircle cx='36.5' cy='42.5' r='7.5' fill='%230f7e54'/%3E%3Cpath d='M32.8 42.6l2.6 2.6 4.6-5' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;700;800&display=swap">
   <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="demo/widget.css">
 </head>
-<body>
+<body class="v3">
 
-<header class="site-head">
-  <div class="wrap bar">
+<header class="pill-nav" id="top">
+  <div class="pill-nav-inner">
     <a class="brand" href="index.html"><span class="brand-dot"></span>MySellStack&nbsp;<b>Appointments</b></a>
-    <nav class="nav">
+    <nav class="pill-links">
+      <a href="#demo">Live demo</a>
       <a href="#features">Features</a>
-      <a href="#tour">Product</a>
+      <a href="#use-cases">Use cases</a>
       <a href="#pricing">Pricing</a>
       <a href="help/index.html">Help</a>
-      <a class="btn btn-sm" href="help/index.html#contact">Contact us</a>
     </nav>
+    <a class="btn btn-sm" href="#demo">Try the demo</a>
   </div>
 </header>
 
 <main>
-  <section class="hero">
+  <section class="hero hero-center">
     <div class="wrap">
-      <div class="hero-copy">
-        <span class="eyebrow">Appointment booking for Shopify</span>
-        <h1>Take bookings right on your storefront.</h1>
-        <p class="lede">
-          Sell services the way you sell products. Customers pick a time and
-          pay in your own checkout. Your calendar, staff schedules, and
-          booking emails handle the rest.
-        </p>
-        <div class="cta-row">
-          <a class="btn" href="help/index.html">Browse the help center</a>
-          <a class="btn btn-ghost" href="help/index.html#contact">Talk to us</a>
-        </div>
-        <p class="hero-note">Coming soon to the Shopify App Store.</p>
+      <span class="eyebrow eyebrow-live"><span class="pulse"></span>Appointment booking for Shopify</span>
+      <h1>Turn any product into<br>a bookable service.</h1>
+      <p class="lede">
+        The booking calendar that lives in your theme. Customers pick a time
+        and pay in your own checkout, while staff schedules, reminders, and
+        confirmation emails run themselves.
+      </p>
+      <div class="cta-row cta-center">
+        <a class="btn btn-lg" href="#demo">Try the live demo</a>
+        <a class="btn btn-ghost btn-lg" href="help/index.html">Browse the help center</a>
       </div>
-      <figure class="frame">
-        <img src="assets/home-hero-scene.webp" alt="The booking widget shown on a laptop and a phone, with a month of available days and a booking-confirmed notification" width="1536" height="1024" fetchpriority="high">
-      </figure>
+      <div class="badge-row">
+        <span class="badge-chip">Coming soon to the Shopify App Store</span>
+        <span class="badge-chip">Free during early access</span>
+        <span class="badge-chip">GDPR built in</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section demo-section" id="demo">
+    <div class="wrap">
+      <div class="section-head section-head-center reveal">
+        <div class="kicker">See it live</div>
+        <h2>This is the real widget. Go ahead, book something.</h2>
+        <p>Not a video and not a mockup: the exact calendar your customers
+           get, running right here. Switch the theme, pick a slot, finish a
+           booking. Nothing is saved and no email is sent.</p>
+      </div>
+
+      <div class="demo-controls reveal">
+        <div class="demo-tabs" role="group" aria-label="Demo service">
+          <button type="button" class="demo-tab is-active" data-demo-product="15000934023279">
+            1-on-1 · Massage
+          </button>
+          <button type="button" class="demo-tab" data-demo-product="14988618661999">
+            Group class · Yoga
+          </button>
+        </div>
+        <div class="demo-themes" role="group" aria-label="Widget theme">
+          <button type="button" class="theme-pill is-active" data-demo-theme="aurora">
+            <span class="swatch" style="background:#355C55"></span>Aurora
+          </button>
+          <button type="button" class="theme-pill" data-demo-theme="noir">
+            <span class="swatch" style="background:#16181d"></span>Noir
+          </button>
+          <button type="button" class="theme-pill" data-demo-theme="ocean">
+            <span class="swatch" style="background:#243447"></span>Ocean
+          </button>
+          <button type="button" class="theme-pill" data-demo-theme="blush">
+            <span class="swatch" style="background:#7A4A3B"></span>Blush
+          </button>
+        </div>
+      </div>
+
+      <div class="demo-stage reveal" id="demo-stage">
+        <div id="demo-widget-holder" aria-live="polite">
+          <div
+            data-booking-widget-inline
+            data-product-id="15000934023279"
+            data-product-price="$120.00"
+            data-product-price-cents="12000"
+            data-product-currency="USD"
+          ></div>
+        </div>
+      </div>
+      <p class="demo-note">Demo mode: bookings made here are pretend, slots
+         reset on reload, and the confirmation email stays imaginary.</p>
     </div>
   </section>
 
@@ -67,56 +119,8 @@
     </div>
   </div>
 
-  <section class="section" id="features">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="kicker">Everything included</div>
-        <h2>Built for businesses that sell time</h2>
-        <p>Salons, studios, clinics, classes, consultants. If it happens at an hour, it books here.</p>
-      </div>
-      <div class="grid-3">
-        <div class="card feature">
-          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/></svg></span>
-          <h3>Book from your theme</h3>
-          <p>Bookable products swap “Add to cart” for “Book now”. Use a pop-up,
-             an inline calendar, or a full services page.</p>
-        </div>
-        <div class="card feature">
-          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="3"/><path d="M2 10h20"/></svg></span>
-          <h3>Paid in your checkout</h3>
-          <p>Paid bookings are normal Shopify orders, refunds included. Free
-             and pay-on-arrival services skip payment.</p>
-        </div>
-        <div class="card feature">
-          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M17.5 13.6a6.5 6.5 0 0 1 4 6.4"/></svg></span>
-          <h3>Staff and capacity</h3>
-          <p>Personal schedules, time off, group classes with limited spots,
-             and fixed event times.</p>
-        </div>
-        <div class="card feature">
-          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.6-6.3"/><path d="M21 3v6h-6"/></svg></span>
-          <h3>Two-way calendar sync</h3>
-          <p>Bookings appear in Google, Outlook, or iCloud calendars. Busy time
-             blocks your slots automatically.</p>
-        </div>
-        <div class="card feature">
-          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m3 7 9 6 9-6"/></svg></span>
-          <h3>Email on autopilot</h3>
-          <p>Confirmations, reminders, and follow-ups send themselves. Every
-             template is yours to edit.</p>
-        </div>
-        <div class="card feature">
-          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 8-8 8 8 0 0 1 7 4.2"/><path d="M20 4v4h-4"/><path d="M20 12a8 8 0 0 1-8 8 8 8 0 0 1-7-4.2"/><path d="M4 20v-4h4"/></svg></span>
-          <h3>Self-serve changes</h3>
-          <p>Customers reschedule or cancel from a secure link, inside the
-             rules and notice windows you set.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="section" id="tour">
-    <div class="wrap grid-2">
+    <div class="wrap grid-2 reveal">
       <div>
         <div class="kicker">Run the day</div>
         <h2>One calendar for the whole business</h2>
@@ -134,7 +138,7 @@
   </section>
 
   <section class="section">
-    <div class="wrap grid-2">
+    <div class="wrap grid-2 reveal">
       <figure class="shot">
         <img src="assets/home-editor-scene.webp" alt="The service editor with the live storefront preview shown on a phone beside it" width="1536" height="1024" loading="lazy">
       </figure>
@@ -152,7 +156,7 @@
   </section>
 
   <section class="section">
-    <div class="wrap grid-2">
+    <div class="wrap grid-2 reveal">
       <div>
         <div class="kicker">Stay in sync</div>
         <h2>Your calendar stays the source of truth</h2>
@@ -169,13 +173,57 @@
     </div>
   </section>
 
+  <section class="section section-tinted" id="features">
+    <div class="wrap">
+      <div class="section-head section-head-center reveal">
+        <div class="kicker">Everything covered</div>
+        <h2>The details are already handled</h2>
+        <p>Salons, studios, clinics, classes, consultants. If it happens at an
+           hour, it books here.</p>
+      </div>
+      <div class="tile-grid reveal">
+        <div class="tile"><h3>Book from your theme</h3><p>Pop-up, inline calendar, or a full services page. “Add to cart” becomes “Book now”.</p></div>
+        <div class="tile"><h3>Paid in your checkout</h3><p>Paid bookings are normal Shopify orders, refunds included.</p></div>
+        <div class="tile"><h3>Free and pay-on-arrival</h3><p>Skip payment entirely, or reserve now and collect at the venue.</p></div>
+        <div class="tile"><h3>Staff schedules</h3><p>Personal hours, breaks, time off, and one-click weekly templates.</p></div>
+        <div class="tile"><h3>Group classes and events</h3><p>Limited spots, fixed session times, and co-taught classes.</p></div>
+        <div class="tile"><h3>Automatic reminders</h3><p>Confirmations, reminders, and follow-ups send themselves. Every template is editable.</p></div>
+        <div class="tile"><h3>Add-on upsells</h3><p>Offer extras at booking time and watch them in analytics.</p></div>
+        <div class="tile"><h3>Meet and Teams links</h3><p>Virtual services mint a join link and send it with every confirmation.</p></div>
+        <div class="tile"><h3>Custom questions</h3><p>Collect exactly what you need from each attendee, with show/hide logic.</p></div>
+        <div class="tile"><h3>Self-serve changes</h3><p>Customers reschedule or cancel from a secure link, inside your rules.</p></div>
+        <div class="tile"><h3>Translations</h3><p>Every customer-facing widget text is yours to rewrite, in any language.</p></div>
+        <div class="tile"><h3>Blocked dates and holidays</h3><p>Breaks, blocked days, and one-click national holidays.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="use-cases">
+    <div class="wrap">
+      <div class="section-head section-head-center reveal">
+        <div class="kicker">Use cases</div>
+        <h2>Built for people who sell time</h2>
+      </div>
+      <div class="case-grid reveal">
+        <span class="case-chip">Salons &amp; barbers</span>
+        <span class="case-chip">Spas &amp; massage</span>
+        <span class="case-chip">Yoga &amp; fitness studios</span>
+        <span class="case-chip">Coaches &amp; tutors</span>
+        <span class="case-chip">Clinics &amp; wellness</span>
+        <span class="case-chip">Photographers</span>
+        <span class="case-chip">Rentals &amp; experiences</span>
+        <span class="case-chip">Repairs &amp; house calls</span>
+      </div>
+    </div>
+  </section>
+
   <section class="section" id="how">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head reveal">
         <div class="kicker">Three steps</div>
         <h2>Live before your coffee cools</h2>
       </div>
-      <div class="steps">
+      <div class="steps reveal">
         <div class="step">
           <span class="n"></span>
           <h3>Create a service</h3>
@@ -197,11 +245,11 @@
 
   <section class="section" id="pricing">
     <div class="wrap">
-      <div class="section-head" style="text-align:center;margin-inline:auto">
+      <div class="section-head section-head-center reveal">
         <div class="kicker">Pricing</div>
         <h2>Free while we launch</h2>
       </div>
-      <div class="card price-card">
+      <div class="card price-card reveal">
         <div class="amount">$0</div>
         <p style="margin:0 auto">Every feature. No booking limits. No card required.</p>
         <ul>
@@ -211,16 +259,24 @@
           <li>Analytics and CSV exports</li>
         </ul>
         <a class="btn" href="help/install-and-setup.html">See how setup works</a>
+        <p class="price-note">Paid plans arrive with the App Store launch. Early
+           merchants will hear about them first.</p>
       </div>
     </div>
   </section>
 
   <section class="section" id="faq">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head reveal">
         <div class="kicker">Questions</div>
         <h2>Frequently asked</h2>
       </div>
+      <details>
+        <summary>Is the demo on this page the real widget?</summary>
+        <p>Yes. It is the exact JavaScript bundle our theme extension ships to
+        storefronts, running against sample data instead of a live shop. What
+        you see is what your customers get.</p>
+      </details>
       <details>
         <summary>Do paid bookings really go through Shopify checkout?</summary>
         <p>Yes. A paid service books through your store’s own checkout, so
@@ -233,6 +289,12 @@
         <p>No. The widget ships in a Shopify theme app extension served from
         Shopify’s CDN, and its script loads deferred so it never blocks your
         page from rendering. Booking UI appears only on booking pages.</p>
+      </details>
+      <details>
+        <summary>How do group classes fill up?</summary>
+        <p>You set the capacity per class. Slots show how many places are
+        left, stop selling when full, and can run at fixed times with one or
+        several teachers.</p>
       </details>
       <details>
         <summary>Can customers cancel or reschedule on their own?</summary>
@@ -269,6 +331,7 @@
     <a class="brand" href="index.html"><span class="brand-dot"></span>MySellStack&nbsp;<b>Appointments</b></a>
     <nav aria-label="Product">
       <strong>Product</strong>
+      <a href="#demo">Live demo</a>
       <a href="#features">Features</a>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
@@ -288,6 +351,64 @@
   </div>
   <div class="wrap small-print">© 2026 MySellStack · Appointments for Shopify</div>
 </footer>
+
+<script src="demo/demo-data.js"></script>
+<script src="demo/demo-shim.js"></script>
+<script src="demo/widget.js" defer></script>
+<script>
+(function () {
+  "use strict";
+  // ---- scroll-reveal (skipped entirely under reduced motion) ----
+  var motionOK = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var revealed = document.querySelectorAll(".reveal");
+  if (motionOK && "IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add("in");
+          io.unobserve(e.target);
+        }
+      });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+    revealed.forEach(function (el) { io.observe(el); });
+  } else {
+    revealed.forEach(function (el) { el.classList.add("in"); });
+  }
+
+  // ---- pill nav elevation on scroll ----
+  var nav = document.querySelector(".pill-nav");
+  var onScroll = function () {
+    nav.classList.toggle("scrolled", window.scrollY > 8);
+  };
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  // ---- demo controls ----
+  var STATE = window.__BW_DEMO_STATE__;
+  var DATA = window.__BW_DEMO_DATA__;
+  function activate(group, btn) {
+    group.forEach(function (b) { b.classList.toggle("is-active", b === btn); });
+  }
+  var themeBtns = Array.prototype.slice.call(document.querySelectorAll("[data-demo-theme]"));
+  themeBtns.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      if (!STATE || STATE.theme === btn.getAttribute("data-demo-theme")) return;
+      STATE.theme = btn.getAttribute("data-demo-theme");
+      activate(themeBtns, btn);
+      window.__BW_DEMO_REMOUNT__();
+    });
+  });
+  var tabBtns = Array.prototype.slice.call(document.querySelectorAll("[data-demo-product]"));
+  tabBtns.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      if (!STATE || STATE.product === btn.getAttribute("data-demo-product")) return;
+      STATE.product = btn.getAttribute("data-demo-product");
+      activate(tabBtns, btn);
+      window.__BW_DEMO_REMOUNT__();
+    });
+  });
+})();
+</script>
 
 </body>
 </html>

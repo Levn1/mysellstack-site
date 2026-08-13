@@ -336,3 +336,152 @@ details p { font-size: 0.96rem; color: var(--body); }
   .steps::before { display: none; }
   .cta-inner { flex-direction: column; text-align: center; }
 }
+
+/* =============================================================
+   v3 homepage — floating pill nav, centered hero, live demo,
+   tile grid, use-case chips, scroll reveals. Help pages keep the
+   original .site-head styles above; everything here is scoped to
+   the new homepage classes.
+   ============================================================= */
+
+body.v3 { padding-top: 88px; }
+
+.pill-nav {
+  position: fixed; top: 14px; left: 0; right: 0; z-index: 60;
+  pointer-events: none;
+}
+.pill-nav-inner {
+  pointer-events: auto;
+  max-width: 1010px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between; gap: 18px;
+  padding: 10px 12px 10px 20px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--line); border-radius: 999px;
+  box-shadow: 0 1px 2px rgba(19, 32, 25, 0.04);
+  transition: box-shadow 200ms ease, background 200ms ease;
+}
+.pill-nav.scrolled .pill-nav-inner {
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 8px 30px -12px rgba(19, 32, 25, 0.22);
+}
+@media (max-width: 1060px) { .pill-nav-inner { margin: 0 16px; } }
+.pill-links { display: flex; gap: 22px; }
+.pill-links a {
+  color: var(--body); text-decoration: none; font-size: 14.5px; font-weight: 500;
+}
+.pill-links a:hover { color: var(--brand-deep); }
+@media (max-width: 780px) { .pill-links { display: none; } }
+
+.hero-center { text-align: center; padding: 64px 0 26px; }
+.hero-center h1 {
+  font-size: clamp(38px, 6vw, 62px); font-weight: 800; letter-spacing: -0.03em;
+  margin: 18px auto 0; max-width: 820px;
+}
+.hero-center .lede { max-width: 640px; margin: 20px auto 0; }
+.cta-center { justify-content: center; }
+.btn-lg { padding: 13px 26px; font-size: 16px; }
+.eyebrow-live {
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.pulse {
+  width: 8px; height: 8px; border-radius: 50%; background: var(--brand);
+  box-shadow: 0 0 0 0 rgba(15, 126, 84, 0.35);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .pulse { animation: bwPulse 2.2s ease-out infinite; }
+  @keyframes bwPulse {
+    0% { box-shadow: 0 0 0 0 rgba(15, 126, 84, 0.35); }
+    70% { box-shadow: 0 0 0 9px rgba(15, 126, 84, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(15, 126, 84, 0); }
+  }
+}
+.badge-row {
+  display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
+  margin-top: 26px;
+}
+.badge-chip {
+  font-size: 12.5px; font-weight: 600; color: var(--muted);
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: 999px; padding: 6px 14px;
+}
+
+/* ---- live demo ---- */
+.demo-section { padding-top: 40px; }
+.section-head-center { text-align: center; margin-inline: auto; }
+.section-head-center p { margin-inline: auto; }
+.demo-controls {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 14px; flex-wrap: wrap; margin: 30px 0 14px;
+}
+.demo-tabs, .demo-themes { display: inline-flex; gap: 4px; flex-wrap: wrap;
+  background: var(--brand-wash); border: 1px solid var(--line);
+  border-radius: 999px; padding: 4px;
+}
+.demo-tab, .theme-pill {
+  appearance: none; border: none; cursor: pointer; font: inherit;
+  font-size: 13.5px; font-weight: 600; color: var(--muted);
+  background: transparent; border-radius: 999px; padding: 8px 16px;
+  display: inline-flex; align-items: center; gap: 8px; white-space: nowrap;
+  transition: background 160ms ease, color 160ms ease, box-shadow 160ms ease;
+}
+.demo-tab:hover, .theme-pill:hover { color: var(--ink); }
+.demo-tab.is-active, .theme-pill.is-active {
+  background: var(--card); color: var(--ink);
+  box-shadow: 0 1px 3px rgba(19, 32, 25, 0.12);
+}
+.theme-pill .swatch {
+  width: 13px; height: 13px; border-radius: 50%;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35), 0 0 0 1px rgba(19, 32, 25, 0.1);
+}
+.demo-stage {
+  border: 1px solid var(--line); border-radius: 20px; background: var(--card);
+  box-shadow: var(--shadow); padding: clamp(10px, 2.5vw, 26px);
+  min-height: 420px;
+}
+#demo-widget-holder { min-height: 380px; }
+.demo-note {
+  text-align: center; font-size: 12.5px; color: var(--muted); margin-top: 14px;
+}
+
+/* ---- tinted band + tile grid ---- */
+.section-tinted {
+  background: linear-gradient(180deg, var(--bg) 0%, var(--brand-wash) 12%, var(--brand-wash) 88%, var(--bg) 100%);
+}
+.tile-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 14px; margin-top: 34px;
+}
+.tile {
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: 16px; padding: 18px 18px 16px;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .tile:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+}
+.tile h3 { font-size: 15.5px; margin-bottom: 6px; }
+.tile p { font-size: 13.8px; color: var(--muted); line-height: 1.55; }
+
+/* ---- use-case chips ---- */
+.case-grid {
+  display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;
+  margin-top: 30px;
+}
+.case-chip {
+  background: var(--card); border: 1px solid var(--line); border-radius: 999px;
+  padding: 12px 22px; font-weight: 600; font-size: 15px; color: var(--ink);
+  transition: border-color 160ms ease, transform 160ms ease;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .case-chip:hover { border-color: var(--brand); transform: translateY(-2px); }
+}
+
+.price-note { font-size: 12.5px; color: var(--muted); margin-top: 14px; }
+
+/* ---- scroll reveal ---- */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { opacity: 0; transform: translateY(16px);
+    transition: opacity 550ms ease, transform 550ms ease; }
+  .reveal.in { opacity: 1; transform: none; }
+}
