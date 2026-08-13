@@ -17,9 +17,10 @@
   var DATA = window.__BW_DEMO_DATA__;
   if (!DATA) return;
 
+  var qs = new URLSearchParams(window.location.search);
   var STATE = (window.__BW_DEMO_STATE__ = {
-    theme: "aurora",
-    product: "15000934023279",
+    theme: qs.get("theme") || "aurora",
+    product: qs.get("product") || "15000934023279",
     seq: 0,
   });
 
@@ -28,6 +29,37 @@
   Object.keys(DATA.products).forEach(function (pid) {
     serviceToProduct[DATA.products[pid].config.service.id] = pid;
   });
+
+  function themedServiceImage(kind, theme) {
+    var a = (theme && theme.headerBgColor) || "#355C55";
+    var b = (theme && theme.primaryColor) || "#6F9F8E";
+    var fg = (theme && theme.headerTextColor) || "#ffffff";
+    var defs =
+      '<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">' +
+      '<stop offset="0" stop-color="' + a + '"/>' +
+      '<stop offset="1" stop-color="' + b + '"/>' +
+      "</linearGradient></defs>";
+    var glyph;
+    if (kind === "events") {
+      glyph =
+        '<circle cx="240" cy="190" r="58" fill="' + fg + '" opacity=".95"/>' +
+        '<g stroke="' + fg + '" stroke-width="13" stroke-linecap="round" opacity=".8">' +
+        '<path d="M240 96v-26M306 122l19-19M332 190h26M306 258l19 19M174 122l-19-19M148 190h-26M174 258l-19 19"/></g>' +
+        '<path d="M118 400c42-62 82-38 122-38s80-24 122 38c-48 22-92 30-122 30s-74-8-122-30z" fill="' + fg + '" opacity=".92"/>';
+    } else {
+      glyph =
+        '<g fill="' + fg + '" opacity=".94">' +
+        '<ellipse cx="240" cy="322" rx="118" ry="44"/>' +
+        '<ellipse cx="240" cy="256" rx="92" ry="37" opacity=".85"/>' +
+        '<ellipse cx="240" cy="200" rx="64" ry="29" opacity=".75"/></g>' +
+        '<g stroke="' + fg + '" stroke-width="11" stroke-linecap="round" fill="none" opacity=".9">' +
+        '<path d="M152 124c14-26 34-26 48 0M218 100c14-26 34-26 48 0M284 124c14-26 34-26 48 0"/></g>';
+    }
+    var svg =
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480">' +
+      defs + '<rect width="480" height="480" fill="url(#g)"/>' + glyph + "</svg>";
+    return "data:image/svg+xml," + encodeURIComponent(svg);
+  }
 
   function jsonResponse(obj, status) {
     return new Response(JSON.stringify(obj), {
@@ -109,7 +141,7 @@
       // Show more of the product in the demo: the solo service gets the
       // customer-facing staff picker, and both carry a service image.
       if (p.kind === "open") cfg.service.staffSelection = "customer_picks";
-      if (p.image) cfg.service.imageUrl = p.image;
+      cfg.service.imageUrl = themedServiceImage(p.kind, cfg.theme);
       return jsonResponse(cfg);
     }
     if (path === "/availability") {
@@ -150,25 +182,4 @@
     return pause().then(function () { return route(u); });
   };
 
-  // (Re)mount the widget for the current product + theme. The bundle
-  // guards against double-init with a window flag, so a remount resets
-  // the flag, swaps in a fresh container, and re-executes the script.
-  window.__BW_DEMO_REMOUNT__ = function () {
-    var holder = document.getElementById("demo-widget-holder");
-    if (!holder) return;
-    var p = DATA.products[STATE.product];
-    holder.innerHTML = "";
-    var el = document.createElement("div");
-    el.setAttribute("data-booking-widget-inline", "");
-    el.setAttribute("data-product-id", STATE.product);
-    el.setAttribute("data-product-price", p.price);
-    el.setAttribute("data-product-price-cents", String(p.cents));
-    el.setAttribute("data-product-currency", "USD");
-    holder.appendChild(el);
-    window.__bw_widget_initialized__ = false;
-    STATE.seq += 1;
-    var s = document.createElement("script");
-    s.src = "demo/widget.js?remount=" + STATE.seq;
-    document.body.appendChild(s);
-  };
 })();

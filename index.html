@@ -17,7 +17,6 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;700;800&display=swap">
   <script>document.documentElement.classList.add("js");</script>
   <link rel="stylesheet" href="css/site.css">
-  <link rel="stylesheet" href="demo/widget.css?v=2">
 </head>
 <body class="v3">
 
@@ -88,11 +87,11 @@
           <button type="button" class="theme-pill is-active" aria-pressed="true" data-demo-theme="aurora">
             <span class="swatch" style="background:#355C55"></span>Aurora
           </button>
-          <button type="button" class="theme-pill" aria-pressed="false" data-demo-theme="noir">
-            <span class="swatch" style="background:#16181d"></span>Noir
+          <button type="button" class="theme-pill" aria-pressed="false" data-demo-theme="midnight">
+            <span class="swatch" style="background:#251A55"></span>Midnight
           </button>
-          <button type="button" class="theme-pill" aria-pressed="false" data-demo-theme="ocean">
-            <span class="swatch" style="background:#243447"></span>Ocean
+          <button type="button" class="theme-pill" aria-pressed="false" data-demo-theme="sunset">
+            <span class="swatch" style="background:#B4380D"></span>Sunset
           </button>
           <button type="button" class="theme-pill" aria-pressed="false" data-demo-theme="blush">
             <span class="swatch" style="background:#7A4A3B"></span>Blush
@@ -103,15 +102,8 @@
       <div class="demo-stage reveal" id="demo-stage">
         <noscript><p class="demo-note" style="padding:40px 20px">The live demo
            needs JavaScript. Everything else on this page works without it.</p></noscript>
-        <div id="demo-widget-holder" aria-live="polite">
-          <div
-            data-booking-widget-inline
-            data-product-id="15000934023279"
-            data-product-price="$120.00"
-            data-product-price-cents="12000"
-            data-product-currency="USD"
-          ></div>
-        </div>
+        <iframe id="demo-frame" src="demo/frame.html?theme=aurora&amp;product=15000934023279"
+          title="Live booking widget demo" loading="lazy" scrolling="no"></iframe>
       </div>
     </div>
   </section>
@@ -370,9 +362,6 @@
   <div class="wrap small-print">© 2026 MySellStack · Appointments for Shopify</div>
 </footer>
 
-<script src="demo/demo-data.js"></script>
-<script src="demo/demo-shim.js"></script>
-<script src="demo/widget.js?v=2" defer></script>
 <script>
 (function () {
   "use strict";
@@ -426,21 +415,37 @@
   onScroll();
 
   // ---- demo controls ----
-  var STATE = window.__BW_DEMO_STATE__;
-  var DATA = window.__BW_DEMO_DATA__;
+  var demo = { theme: "aurora", product: "15000934023279" };
+  var frame = document.getElementById("demo-frame");
   function activate(group, btn) {
     group.forEach(function (b) {
       b.classList.toggle("is-active", b === btn);
       b.setAttribute("aria-pressed", b === btn ? "true" : "false");
     });
   }
+  function reloadFrame() {
+    // location.replace: switching themes must not pollute the browser's
+    // back-button history with iframe navigations.
+    var url = new URL("demo/frame.html", window.location.href);
+    url.searchParams.set("theme", demo.theme);
+    url.searchParams.set("product", demo.product);
+    frame.classList.add("loading");
+    frame.contentWindow.location.replace(url.href);
+  }
+  frame.addEventListener("load", function () { frame.classList.remove("loading"); });
+  window.addEventListener("message", function (e) {
+    if (e.data && typeof e.data.bwDemoHeight === "number") {
+      frame.style.height = Math.max(420, e.data.bwDemoHeight) + "px";
+    }
+  });
   var themeBtns = Array.prototype.slice.call(document.querySelectorAll("[data-demo-theme]"));
   themeBtns.forEach(function (btn) {
     btn.addEventListener("click", function () {
-      if (!STATE || STATE.theme === btn.getAttribute("data-demo-theme")) return;
-      STATE.theme = btn.getAttribute("data-demo-theme");
+      var t = btn.getAttribute("data-demo-theme");
+      if (demo.theme === t) return;
+      demo.theme = t;
       activate(themeBtns, btn);
-      window.__BW_DEMO_REMOUNT__();
+      reloadFrame();
     });
   });
   var viewBtns = Array.prototype.slice.call(document.querySelectorAll("[data-demo-view]"));
@@ -454,10 +459,11 @@
   var tabBtns = Array.prototype.slice.call(document.querySelectorAll("[data-demo-product]"));
   tabBtns.forEach(function (btn) {
     btn.addEventListener("click", function () {
-      if (!STATE || STATE.product === btn.getAttribute("data-demo-product")) return;
-      STATE.product = btn.getAttribute("data-demo-product");
+      var p = btn.getAttribute("data-demo-product");
+      if (demo.product === p) return;
+      demo.product = p;
       activate(tabBtns, btn);
-      window.__BW_DEMO_REMOUNT__();
+      reloadFrame();
     });
   });
 })();
