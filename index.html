@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;700;800&display=swap">
   <script>document.documentElement.classList.add("js");</script>
-  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/site.css?v=2">
 </head>
 <body class="v3">
 
@@ -257,21 +257,71 @@
     <div class="wrap">
       <div class="section-head section-head-center reveal">
         <div class="kicker">Pricing</div>
-        <h2>Free while we launch</h2>
+        <h2>Simple plans. No booking limits, no revenue caps.</h2>
       </div>
-      <div class="card price-card reveal">
-        <div class="amount">$0</div>
-        <p style="margin:0 auto">Every feature. No booking limits. No card required.</p>
-        <ul>
-          <li>Unlimited services, staff, and bookings</li>
-          <li>Calendar sync for your whole team</li>
-          <li>All email templates and reminders</li>
-          <li>Analytics and CSV exports</li>
-        </ul>
-        <a class="btn" href="help/install-and-setup.html">See how setup works</a>
-        <p class="price-note">Paid plans arrive with the App Store launch. Early
-           merchants will hear about them first.</p>
+      <div class="plans-grid reveal">
+        <div class="plan-card">
+          <div class="plan-name">Free</div>
+          <div class="plan-price">$0<span> forever</span></div>
+          <div class="plan-annual">No card required</div>
+          <ul class="plan-list">
+            <li>Unlimited bookings</li>
+            <li>Unlimited team members</li>
+            <li>1 bookable service</li>
+            <li>Email confirmations with calendar invites</li>
+            <li>In-person or virtual with your own meeting links</li>
+            <li>Admin calendar, manual bookings, blocked times</li>
+            <li>Widget themes and translations</li>
+          </ul>
+        </div>
+        <div class="plan-card">
+          <div class="plan-name">Standard</div>
+          <div class="plan-price">$15<span>/month</span></div>
+          <div class="plan-annual">or $150/year, save 17%</div>
+          <ul class="plan-list">
+            <li class="plan-inherit">Everything in Free, plus:</li>
+            <li>Unlimited services</li>
+            <li>Automatic reminders</li>
+            <li>Post-booking follow-ups</li>
+            <li>Intake questions</li>
+            <li>Branded emails: logo, colors, templates</li>
+          </ul>
+          <div class="plan-trial">7-day free trial</div>
+        </div>
+        <div class="plan-card plan-featured">
+          <div class="plan-tag">Recommended</div>
+          <div class="plan-name">Pro</div>
+          <div class="plan-price">$29<span>/month</span></div>
+          <div class="plan-annual">or $250/year, save 28%</div>
+          <ul class="plan-list">
+            <li class="plan-inherit">Everything in Standard, plus:</li>
+            <li>Google Calendar two-way sync</li>
+            <li>Google Meet links on virtual bookings</li>
+            <li>Group events with capacity</li>
+            <li>Upsells at booking</li>
+            <li>Customer self-serve cancel and reschedule</li>
+          </ul>
+          <div class="plan-trial">7-day free trial</div>
+        </div>
+        <div class="plan-card">
+          <div class="plan-name">Pro Plus</div>
+          <div class="plan-price">$39<span>/month</span></div>
+          <div class="plan-annual">or $350/year, save 25%</div>
+          <ul class="plan-list">
+            <li class="plan-inherit">Everything in Pro, plus:</li>
+            <li>Outlook sync and Teams links</li>
+            <li>Services directory page</li>
+            <li>Send from your own email domain</li>
+            <li>Remove "Powered by" badge, admin BCC</li>
+            <li>CSV exports of bookings, calendar, and analytics</li>
+            <li>Priority support</li>
+          </ul>
+          <div class="plan-trial">7-day free trial</div>
+        </div>
       </div>
+      <p class="plans-note reveal">Every plan takes unlimited bookings. Early access is
+         free while we finish our Shopify App Store review; paid plans begin at
+         launch, and early merchants hear first.</p>
     </div>
   </section>
 
@@ -286,6 +336,16 @@
         <p>Yes. It is the exact JavaScript bundle our theme extension ships to
         storefronts, running against sample data instead of a live shop. What
         you see is what your customers get.</p>
+      </details>
+      <details>
+        <summary>What does it cost?</summary>
+        <p>Free covers a single service with unlimited bookings. Standard
+        ($15/month) unlocks unlimited services, reminders, and branded emails;
+        Pro ($29/month) adds Google Calendar sync, Google Meet links, group events,
+        and upsells; Pro Plus ($39/month) adds Outlook and Teams, your own
+        sending domain, and CSV exports. Paid plans carry a 7-day free
+        trial, charges land on your regular Shopify invoice, and no plan caps
+        your bookings or your revenue. During early access everything is free.</p>
       </details>
       <details>
         <summary>Do paid bookings really go through Shopify checkout?</summary>
@@ -308,9 +368,10 @@
       </details>
       <details>
         <summary>Can customers cancel or reschedule on their own?</summary>
-        <p>Yes. Every booking email links to a secure page where the customer
-        can reschedule or cancel within the notice windows you configure. You
-        can also do either from the admin at any time.</p>
+        <p>On the Pro and Pro Plus plans, every booking email links to a
+        secure page where the customer can reschedule or cancel within the
+        notice windows you set. On any plan, you can reschedule or cancel any
+        booking from the admin yourself.</p>
       </details>
       <details>
         <summary>What about my customers’ data?</summary>
