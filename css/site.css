@@ -544,7 +544,7 @@ body.v3 { padding-top: 88px; }
    of the page; the featured tier gets the brand border, nothing louder. */
 .plans-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(192px, 1fr));
   gap: 16px;
   align-items: stretch;
 }
