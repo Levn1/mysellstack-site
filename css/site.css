@@ -540,6 +540,10 @@ body.v3 { padding-top: 88px; }
 
 .price-note { font-size: 12.5px; color: var(--muted); margin-top: 14px; }
 
+/* About-the-app block (also serves the OAuth verifier's "homepage must
+   explain the app's purpose" requirement). */
+.about-copy { color: var(--body); margin-bottom: 14px; }
+
 /* ---- scroll reveal ---- */
 /* Reveals are gated on html.js (set by an inline script in <head>):
    a no-JS visitor must never be left staring at opacity-0 sections. */
@@ -550,7 +554,7 @@ body.v3 { padding-top: 88px; }
 }
 
 /* Anchor targets clear the fixed pill nav. */
-#demo, #tour, #features, #use-cases, #how, #pricing, #faq {
+#demo, #tour, #features, #use-cases, #how, #pricing, #faq, #about {
   scroll-margin-top: 96px;
 }
 
