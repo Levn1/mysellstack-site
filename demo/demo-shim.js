@@ -19,7 +19,7 @@
 
   var qs = new URLSearchParams(window.location.search);
   var STATE = (window.__BW_DEMO_STATE__ = {
-    theme: qs.get("theme") || "aurora",
+    theme: qs.get("theme") || "sunset",
     product: qs.get("product") || "15000934023279",
     seq: 0,
   });

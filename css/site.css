@@ -144,21 +144,30 @@ a:hover { color: var(--brand-strong); }
 /* ---- trust strip ---- */
 
 .trust { border-bottom: 1px solid var(--line); background: #fff; }
+/* One centered row on desktop — the chips are sized so the label plus
+   all six fit inside the 1080px wrap; below 900px they wrap into
+   centered rows instead of a left-hanging orphan. */
 .trust-row {
-  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
-  padding: 16px 24px;
+  display: flex; align-items: center; justify-content: center;
+  gap: 8px; flex-wrap: nowrap;
+  padding: 14px 12px;
 }
 .trust-label {
   font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
-  text-transform: uppercase; color: var(--muted); margin-right: 8px;
+  text-transform: uppercase; color: var(--muted); margin-right: 6px;
+  white-space: nowrap;
 }
 .chip {
   display: inline-flex; align-items: center; gap: 7px;
-  font-size: 0.85rem; font-weight: 550; color: var(--body);
+  font-size: 0.82rem; font-weight: 550; color: var(--body);
   background: var(--bg); border: 1px solid var(--line);
-  border-radius: 999px; padding: 5px 13px;
+  border-radius: 999px; padding: 5px 12px;
+  white-space: nowrap; flex: none;
 }
 .chip svg { width: 15px; height: 15px; flex: none; }
+@media (max-width: 900px) {
+  .trust-row { flex-wrap: wrap; }
+}
 
 /* ---- sections ---- */
 

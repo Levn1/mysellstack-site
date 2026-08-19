@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;700;800&display=swap">
   <script>document.documentElement.classList.add("js");</script>
-  <link rel="stylesheet" href="css/site.css?v=3">
+  <link rel="stylesheet" href="css/site.css?v=4">
 </head>
 <body class="v3">
 
@@ -86,14 +86,14 @@
           </button>
         </div>
         <div class="demo-themes" role="group" aria-label="Widget theme">
-          <button type="button" class="theme-pill is-active" aria-pressed="true" data-demo-theme="aurora">
+          <button type="button" class="theme-pill is-active" aria-pressed="true" data-demo-theme="sunset">
+            <span class="swatch" style="background:#B4380D"></span>Sunset
+          </button>
+          <button type="button" class="theme-pill" aria-pressed="false" data-demo-theme="aurora">
             <span class="swatch" style="background:#355C55"></span>Aurora
           </button>
           <button type="button" class="theme-pill" aria-pressed="false" data-demo-theme="midnight">
             <span class="swatch" style="background:#251A55"></span>Midnight
-          </button>
-          <button type="button" class="theme-pill" aria-pressed="false" data-demo-theme="sunset">
-            <span class="swatch" style="background:#B4380D"></span>Sunset
           </button>
           <button type="button" class="theme-pill" aria-pressed="false" data-demo-theme="blush">
             <span class="swatch" style="background:#7A4A3B"></span>Blush
@@ -104,7 +104,7 @@
       <div class="demo-stage reveal" id="demo-stage">
         <noscript><p class="demo-note" style="padding:40px 20px">The live demo
            needs JavaScript. Everything else on this page works without it.</p></noscript>
-        <iframe id="demo-frame" src="demo/frame.html?theme=aurora&amp;product=15000934023279"
+        <iframe id="demo-frame" src="demo/frame.html?theme=sunset&amp;product=15000934023279"
           title="Live booking widget demo" loading="lazy" scrolling="no"></iframe>
       </div>
     </div>
@@ -501,7 +501,7 @@
   onScroll();
 
   // ---- demo controls ----
-  var demo = { theme: "aurora", product: "15000934023279" };
+  var demo = { theme: "sunset", product: "15000934023279" };
   var frame = document.getElementById("demo-frame");
   function activate(group, btn) {
     group.forEach(function (b) {
