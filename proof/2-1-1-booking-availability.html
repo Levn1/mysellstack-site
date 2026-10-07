@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Proof of resolution: 2.1.1 booking availability · MySellStack Booking</title>
+  <style>
+    body { margin: 0; padding: 32px 16px 64px; background: #f6f6f7; color: #111827; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    .wrap { max-width: 980px; margin: 0 auto; }
+    h1 { font-size: 22px; margin: 0 0 6px; }
+    .sub { color: #475569; font-size: 14px; line-height: 1.6; margin: 0 0 24px; max-width: 72ch; }
+    h2 { font-size: 15px; margin: 32px 0 10px; }
+    figure { margin: 0; background: #fff; border: 1px solid #e1e3e5; border-radius: 12px; padding: 10px; }
+    img { width: 100%; height: auto; display: block; border-radius: 8px; }
+    figcaption { font-size: 13px; color: #475569; padding: 10px 6px 4px; line-height: 1.5; }
+    ul { font-size: 14px; color: #111827; line-height: 1.7; max-width: 76ch; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Proof of resolution: 2.1.1, booking availability</h1>
+  <p class="sub">The reviewer's screenshots showed the booking modal for "Sample Service 1"
+  with no selectable dates and a disabled Continue. Cause: the service had no staff member
+  assigned and the staff member had no working hours, and the app allowed that state
+  silently. The screenshots below show the resolved state of the same flow, captured on a
+  development store after the fix was deployed to production on October 7, 2026.</p>
+
+  <h2>1. The same booking modal now offers selectable dates</h2>
+  <figure>
+    <img src="2-1-1-selectable-dates.png" alt="The Sample Service 1 booking modal showing an October calendar full of selectable weekday dates, each with remaining slot counts">
+    <figcaption>Sample Service 1, modal open: weekday dates are selectable with remaining
+    slot counts. Mirrors the reviewer's first screenshot, resolved.</figcaption>
+  </figure>
+
+  <h2>2. Picking a date and time enables Continue</h2>
+  <figure>
+    <img src="2-1-1-slot-continue.png" alt="The booking modal with October 7 selected, a list of available times, 10:45 AM chosen, and the Continue button enabled">
+    <figcaption>Date and time selected, Continue enabled, and the core booking flow
+    completes through checkout.</figcaption>
+  </figure>
+
+  <h2>What was fixed (live for all installs)</h2>
+  <ul>
+    <li>New staff members start with default working hours (Mon to Fri, 9 AM to 5 PM), stated in the creation form and adjustable on their Schedule tab.</li>
+    <li>The in-app setup guide now walks merchants through the correct order: enable the widget, add a staff member, then create a service.</li>
+    <li>Creating a service without picking staff shows a clear warning first; a service left without staff gets a "Not bookable" badge in the service list and a banner on the service page linking straight to staff assignment.</li>
+    <li>The service created during the previous review was also repaired, so it now returns availability on the review store itself.</li>
+  </ul>
+</div>
+</body>
+</html>
